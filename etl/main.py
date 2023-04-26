@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 import mysql.connector
 from IPython.core.interactiveshell import InteractiveShell 
 InteractiveShell.ast_node_interactivity = "all" 
-import soporte as patata #En honor a Ana
+import soporte as patata #En honor a Ana García as MátameCamión
 
 
 

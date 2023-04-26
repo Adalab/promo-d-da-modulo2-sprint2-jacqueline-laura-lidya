@@ -16,7 +16,7 @@ Las librerías con las que hemos trabajado este sprint son:
     - Mysql.connector
     - IPython.core.interactiveshell
 
-El repositorio consta de cuatro carpetas:
+El repositorio consta de tres carpetas:
 
  - eda:
 
