@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 import mysql.connector
 from IPython.core.interactiveshell import InteractiveShell 
 InteractiveShell.ast_node_interactivity = "all" 
-import soporte as sp
+import soporte as patata #En honor a Ana
 
 
 
@@ -12,7 +12,7 @@ import soporte as sp
 df_censo_ccaa = pd.read_csv("data/poblacion_comunidades.csv", index_col = 0)
 
 #Llamamos a la clase Extraccion para sacar los datos de la API:
-energias = sp.Extraccion(2011, 2022)
+energias = patata.Extraccion(2011, 2022)
 
 #Extraemos los datos de las energías a nivel nacional:
 df_nacional = energias.nacional()
@@ -28,13 +28,13 @@ energias.limpieza_energias(df_nacional)
 energias.limpieza_energias(df_ccaa)
 
 #Llamamos a la clase CrearBBDD:
-bbdd = sp.CrearBBDD("energia", "AlumnaAdalab")
+bbdd = patata.CrearBBDD("energia", "AlumnaAdalab")
 
 #Creamos primero la base de datos:
 bbdd.creacion_bbdd()
 
 #A continuación creamos las diferentes tablas:
-bbdd.creacion_insercion_tabla(sp.tabla_comunidades)
-bbdd.creacion_insercion_tabla(sp.tabla_fechas)
-bbdd.creacion_insercion_tabla(sp.tabla_energia_comunidades)
-bbdd.creacion_insercion_tabla(sp.tabla_energia_nacional)
+bbdd.creacion_insercion_tabla(patata.tabla_comunidades)
+bbdd.creacion_insercion_tabla(patata.tabla_fechas)
+bbdd.creacion_insercion_tabla(patata.tabla_energia_comunidades)
+bbdd.creacion_insercion_tabla(patata.tabla_energia_nacional)
